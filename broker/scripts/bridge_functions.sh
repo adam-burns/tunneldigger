@@ -13,9 +13,9 @@ ensure_bridge()
     # Bridge did not exist before, we have to initialize it
     ip link set dev $brname up
     # TODO The IP address should probably not be hardcoded here?
-    ip addr add 10.254.0.2/16 dev $brname
+    ip addr add 172.16.1.1/16 dev $brname
     # TODO Policy routing should probably not be hardcoded here?
-    ensure_policy from all iif $brname lookup mesh prio 1000
+#    ensure_policy from all iif $brname lookup mesh prio 1000
     # Disable forwarding between bridge ports
     ebtables -A FORWARD --logical-in $brname -j DROP
   fi

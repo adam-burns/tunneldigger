@@ -1,9 +1,12 @@
 #!/bin/bash
+
 TUNNEL_ID="$1"
 INTERFACE="$3"
 MTU="$4"
+FROM_IP="$5"
+TUNNEL_UUID="$6"
 
-. scripts/bridge_functions.sh
+. /opt/tunneldigger/broker/scripts/bridge_functions.sh
 
 # Set the interface to UP state
 ip link set dev $INTERFACE up mtu $MTU

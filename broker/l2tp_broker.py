@@ -658,10 +658,10 @@ class Tunnel(gevent.Greenlet):
       raise TunnelSetupFailed
 
     # Setup some default values for PMTU
-    self.pmtu = 1446
+    self.pmtu = 1438
     self.peer_pmtu = None
     self.probed_pmtu = 0
-    self.tunnel_mtu = 1446
+    self.tunnel_mtu = 1438
 
     # Make the socket an encapsulation socket by asking the kernel to do so
     try:
